@@ -1,0 +1,330 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Comportamiento del scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* Fuente global */
+body {
+    font-family: 'Sora', sans-serif;
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+}
+
+/* Navegación */
+.header-container .navbar ul {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+}
+
+.header-container .navbar ul li {
+    list-style: none;
+}
+
+.header-container .navbar ul li a {
+    text-decoration: none;
+    color: #333; /* Color predeterminado */
+    transition: color 0.3s;
+}
+
+
+/* Estilo especial para íconos */
+.header-container .shop-span span {
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.header-container .logo{
+    text-decoration: none;
+    color: #333;
+}
+
+.section-title{
+    text-align: center;
+    margin-top: 4rem;
+    line-height: 2;
+}
+
+.section-title span{
+    margin-top: 30px;
+    color: #333;
+    font-weight: 600;
+    /*animation row*/
+    animation: row 1s infinite alternate;
+}
+
+@keyframes row {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+.section-title h1{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.t-shirt{
+    margin: 30px 30px;
+    font-weight: 400;
+
+}
+
+.imagenes{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.imagenes img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+@media screen and (max-width: 600px){
+    .section-title{
+        text-align: center;
+    }
+    
+}
+
+/* Menú Hamburguesa - Oculto en pantallas grandes */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Menú para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Cambia la dirección para apilar elementos */
+        align-items: flex-start;
+        padding: 1rem 2rem;
+    }
+
+    .header-container .logo{
+        display: none;
+    }
+
+    .navbar {
+        display: none; /* Oculta el menú por defecto */
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Cambia a una lista vertical */
+        gap: 10px;
+    }
+
+    .navbar ul li {
+        text-align: left;
+    }
+
+    .navbar ul li a {
+        color: #333;
+        font-size: 1.2rem;
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .hamburger {
+        display: block; /* Muestra el ícono de hamburguesa */
+    }
+
+    .navbar.active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+}
+
+/* Botón para abrir la ventana emergente */
+.shop-span button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FFB02E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.shop-span button:hover {
+    background-color: #e89c1e;
+}
+
+/* Estilo de la ventana emergente */
+.popup {
+    display: none; /* Oculta por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenido de la ventana emergente */
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Sección Sobre Nosotros */
+.about-us {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.about-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.value {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.value span {
+    font-size: 2rem;
+    color: #FFB02E;
+}
+
+.value p {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    /* Imagen y texto en columna */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+
+    /* Valores */
+    .about-values {
+        gap: 1rem;
+    }
+
+    .value {
+        flex-direction: column;
+        padding: 1rem 0.5rem;
+    }
+
+    .value span {
+        font-size: 1.8rem;
+    }
+
+    .value p {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
+    .value span {
+        font-size: 1.5rem;
+    }
+
+    .value p {
+        font-size: 0.8rem;
+    }
+}
